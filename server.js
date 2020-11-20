@@ -96,12 +96,15 @@ app.use('/boatstatusreport', boatstatusreportRouter);
 
 app.use('/schedule', scheduleRouter);
 
-
+const port = process.env.PORT || 8000;
+server.listen(port, () => {
+    console.log("App is running on port " + port);
+});
 
 //require("./routes/employee.route")(app);
 
 // Create a Server
-var server = app.listen(8081, function () {
+var server = app.listen(port, function () {
   var host = server.address().address
   var port = server.address().port
   console.log("App listening at http://%s:%s", host, port)
