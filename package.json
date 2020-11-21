@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "debug": "nodemon --inspect --ignore sessions/ --exec  babel-node ./server.js localhost 8081",
-    "start": "HOST='0.0.0.0' PORT=80 npm run dev"  },
+    "start": "NODE_ENV=production node server.js",
+    "dev": "cross-env NODE_ENV=dev nodemon server.js"
+  },
   "keywords": [
     "Employee Mangement backend"
   ],
